@@ -1,4 +1,3 @@
-//hello
 const obj = {
   value: 42,
   func: function() {
@@ -28,3 +27,25 @@ myFunction(1, 2, 3);
 const myFunction = (...args) => {
   console.log(args); // [1, 2, 3]
 };
+myFunction(1, 2, 3);
+//Regular Function: Can be used as a constructor with new to create objects.
+function MyObject() {
+  this.value = 42;
+}
+const odebj = new MyObject()
+
+//Arrow Function: Cannot be used as a constructor.
+
+const add = (a, b) => a + b; // Implicit return
+const complex = (a, b) => { return a + b; }; // needs Explicit return1[-1]
+
+//Regular Function: Can be used as a method inside an object
+const oetbj = {
+  value: 42,
+  func: function() {
+    console.log(this.value); // 42
+  }
+};
+oetbj.func();
+
+//Arrow Function: Cannot be used as a method inside an object (arrow functions do not have their own this).               
